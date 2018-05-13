@@ -1,6 +1,3 @@
-<img src='imgs/horse2zebra.gif' align="right" width=384>
-
-<br><br><br>
 
 # In2I : Unsupervised Multi-Image-to-Image Translation Using Generative Adversarial Networks
 
@@ -8,7 +5,7 @@ This code is the implementation of the paper, <i> In2I : Unsupervised Multi-Imag
 
 
 
-#### In2I : [[Project]](https://junyanz.github.io/CycleGAN/) [[Paper]](https://arxiv.org/pdf/1703.10593.pdf)
+#### In2I : [[Project]](https://github.com/PramuPerera/In2I) [[Paper]](https://arxiv.org/abs/1711.09334)
 
 
 This work, given a set of paired images from multiple modalities, a transformation is learned to translate the input into a specified domain. Sample constructions from NIR+Greyscale images to color images. 
@@ -21,7 +18,7 @@ Sample constructions from Synthetic RGB+depth images to real color images.
 
 In both cases, a multi-modal Generator is used for both forward and reverse transformations. The network structure used is illustrates in the following figure:
 
-<img src="images/syn2real2.jpg" width="900px"/>
+<img src="images/Archi4Gen.jpg" width="900px"/>
 
 If you use this code for your research, please cite:
 
@@ -44,8 +41,8 @@ Year = {2018}
 
 - Clone this repo:
 ```bash
-git clone https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix
-cd pytorch-CycleGAN-and-pix2pix
+git clone ttps://github.com/PramuPerera/In2I
+cd In2I
 ```
 
 ### 
