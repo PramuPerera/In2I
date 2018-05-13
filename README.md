@@ -54,12 +54,12 @@ cd In2I
 ```
 python train.py --dataroot ./datasets/NIRtoVIS --name nirgreytovis --model cycle_gan --no_dropout --input_nc1 1 input_nc2 1 output_nc 3
 ```
-- To view training results and loss plots, run `python -m visdom.server` and click the URL http://localhost:8097. To see more intermediate results, check out `./checkpoints/maps_cyclegan/web/index.html`
+- To view training results and loss plots, run `python -m visdom.server` and click the URL http://localhost:8097. To see more intermediate results, check out `./checkpoints/nirgreytovis/web/index.html`
 - Test the model:
 ```
-python test.py --dataroot ./datasets/maps --name maps_cyclegan --model cycle_gan --phase test --no_dropout
+python test.py --dataroot ./datasets/NIRtoVIS --name nirgreytovis --model cycle_gan --phase test --no_dropout
 ```
-The test results will be saved to a html file here: `./results/maps_cyclegan/latest_test/index.html`.
+The test results will be saved to a html file here: `./results/nirgreytovis/latest_test/index.html`.
 
 It should be noted that all arguments  are similar to that of CycleGAN PyTorch code. input_nc1 and input_nc2 specifies number of channels in each modality Generator architechture is based on ResNET and is fixed.   
 
