@@ -24,7 +24,7 @@ If you use this code for your research, please cite:
 
 <pre><code>
 @inproceedings{in2i,
-author = {{Perera}, P. and  Abavisani, M. and {Patel}, V.~M.},
+author = {{Perera}, P. and  {Abavisani}, M. and {Patel}, V.~M.},
 title = "{I2I : Unsupervised Multi-Image-to-Image Translation Using Generative Adversarial Networks}",
 Booktitle = {24th International Conference on Pattern Recognition, ICPR 2018},
 Year = {2018}
