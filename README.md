@@ -44,7 +44,7 @@ This code was tested on a Ubuntu 16.04 installation with CUDA 9.0
 - Clone this repo:
 ```bash
 git clone ttps://github.com/PramuPerera/In2I
-cd In2I
+cd In2I-master
 ```
 
 ### 
