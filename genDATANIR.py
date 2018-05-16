@@ -9,12 +9,11 @@ import numpy as np
 import scipy as sp
 
 import os
-datasetA ='/home/labuser/Documents/data/nirscene/*nir.tiff'
-datasetB  = '/home/labuser/Documents/data/nirscene/*rgb.tiff'
+dataset ='/home/labuser/Documents/data/nirscene/'
 destination = 'datasets/NIRtoVIS/'
-dataA = glob.glob(datasetA)
+dataA = glob.glob(dataset+'*nir.tiff')
 dataA = sorted(dataA)
-dataB = glob.glob(datasetB)
+dataB = glob.glob(dataset+'*rgb.tiff')
 dataB = sorted(dataB)
 count = 0
 for i,j in zip(dataA,dataB):
