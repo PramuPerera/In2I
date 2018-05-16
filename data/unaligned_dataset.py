@@ -42,19 +42,10 @@ class UnalignedDataset(BaseDataset):
 	# print('(A, B) = (%d, %d)' % (index_A, index_B))
         A_img = Image.open(A_path)#.convert('RGB') # A image is a no_input*3 collection of images
 	A_img = (self.transformA(A_img))
-	print(np.shape(A_img))
-
-	A1 = A_img[:,0:256,:]
-	A2 = A_img[:,256:512,:]
-	A1 = A1.numpy()
-	A2 = A2.numpy()
-	A1= np.swapaxes(A1,1,2)
-	A1 = torch.from_numpy(A1)
-	A2= np.swapaxes(A2,1,2)
-	A2 = torch.from_numpy(A2)
-	print(np.shape(A1))
-	print(np.shape(A2))
-	#A = np.swapaxes(A,1,2)
+	A1 = A_img[1,0:256,:]
+	A2 = A_img[1,256:512,:]
+	A1 = A1.unsqueeze(0).numpy()
+	A2 = A2.unsqueeze(0).numpy()
 	B_img = Image.open(B_path)#.convert('RGB')
         B = self.transform(B_img)
         if self.opt.which_direction == 'BtoA':
