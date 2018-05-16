@@ -50,18 +50,17 @@ cd In2I
 ### 
 - Download a multi-modal image dataset. Eg: EPFL NIR-VIS dataset can be found from <a href=https://ivrl.epfl.ch/supplementary_material/cvpr11/>here.</a>
 
-- Change the structure of image files. Inside the dataset directory there should be two folders, trainA and trainB, where images of input and output modalities are stored respectivly. Input images are arranged by vertically appending both modalities correspoinding to a given image (similar to how input data are prepared in pix2pix code). Following is an example of how images should be prepared:
+- Change the structure of image files. Inside the dataset directory there should be two folders, trainA and trainB, where images of input and output modalities are stored respectivly. Input images are arranged by vertically appending both modalities correspoinding to a given image (similar to how input data are prepared in pix2pix code). Following is an example of how images should be prepared for NIR+grey to RGB task:
 
 <img src="images/imex.jpg" width="900px"/>
 
-
-Converting input data into the said format can be done using the genDATA.py script. Change lines 12-14 to specify locations of first and second modality. Use variable destination to specify the output directory (Default is datasets/NIRtoVIS).
+Note that trainA image is a concatanation of NIR and greyscale images. trainB image is an RGB image. Converting input data into the said format can be done using the genDATA.py script. Change lines 12-14 to specify locations of first and second modality. Use variable destination to specify the output directory (Default is datasets/NIRtoVIS).
 
 - For NIR+greyscale to RGB task in EPFT dataset, data preparation can be done by running genDATANIR.py script. Path to all files of the dataset should be specified by setting the <i>dataset</i> variable.
 
 - Train a model:
 ```
-python train.py --dataroot ./datasets/NIRtoVIS --name nirgreytovis --model cycle_gan --no_dropout --input_nc1 1 input_nc2 1 output_nc 3
+python train.py --dataroot ./datasets/NIRtoVIS --name nirgreytovis --model cycle_gan --no_dropout --input_nc 1 --input_nc2 1 --output_nc 3
 ```
 - To view training results and loss plots, run `python -m visdom.server` and click the URL http://localhost:8097. To see more intermediate results, check out `./checkpoints/nirgreytovis/web/index.html`
 - Test the model:
@@ -70,5 +69,5 @@ python test.py --dataroot ./datasets/NIRtoVIS --name nirgreytovis --model cycle_
 ```
 The test results will be saved to a html file here: `./results/nirgreytovis/latest_test/index.html`.
 
-It should be noted that all arguments  are similar to that of CycleGAN PyTorch code. input_nc1 and input_nc2 specifies number of channels in each modality Generator architechture is based on ResNET and is fixed.   
+It should be noted that all arguments  are similar to that of CycleGAN PyTorch code. input_nc and input_nc2 specifies number of channels in each modality Generator architechture is based on ResNET and is fixed.   
 
