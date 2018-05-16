@@ -36,8 +36,10 @@ Year = {2018}
 - Linux or macOS
 - Python 2 or 3
 - Pytorch
+- Python packaged NumPy, SciPy, Visdom and Dominate 
 - CPU or NVIDIA GPU + CUDA CuDNN
 
+This code was tested on a Ubuntu 16.04 installation with CUDA 9.0
 
 - Clone this repo:
 ```bash
@@ -46,7 +48,7 @@ cd In2I
 ```
 
 ### 
-- Download a multi-modal image dataset. Eg: EPFL NIR-VIS dataset can be found from <ahref=https://ivrl.epfl.ch/supplementary_material/cvpr11/>here.</a>
+- Download a multi-modal image dataset. Eg: EPFL NIR-VIS dataset can be found from <a href=https://ivrl.epfl.ch/supplementary_material/cvpr11/>here.</a>
 
 - Convert data into a readable format using the genDATA.py script. Change lines 12-14 to specify locations of first and second modality. Use variable destination to specify the output directory (Default is datasets/NIRtoVIS).
 
